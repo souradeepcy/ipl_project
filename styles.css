@@ -1,5 +1,5 @@
 /* ==============================
-   CSS Variables / Theme
+   CSS VARIABLES
    ============================== */
 
 :root {
@@ -9,20 +9,18 @@
     --background: #f4f6fb;
     --card-bg: #ffffff;
     --text: #222222;
-    --light-text: #ffffff;
     --border: #dddddd;
-    --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
 
 /* ==============================
-   General Styling
+   BASIC RESET
    ============================== */
 
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html {
@@ -30,7 +28,7 @@ html {
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, sans-serif;
     background-color: var(--background);
     color: var(--text);
     line-height: 1.6;
@@ -38,7 +36,7 @@ body {
 
 
 /* ==============================
-   Navigation Bar
+   NAVIGATION - FLEXBOX
    ============================== */
 
 header {
@@ -51,12 +49,14 @@ header {
 
 nav {
     background-color: var(--primary);
-    color: var(--light-text);
+    color: white;
+
+    /* Flexbox */
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     padding: 15px 6%;
-    box-shadow: var(--shadow);
 }
 
 nav h2 {
@@ -65,24 +65,26 @@ nav h2 {
 
 nav ul {
     list-style: none;
+
+    /* Flexbox for navigation links */
     display: flex;
+    align-items: center;
     gap: 25px;
 }
 
-nav ul li a {
-    color: var(--light-text);
+nav a {
+    color: white;
     text-decoration: none;
     font-weight: bold;
-    transition: 0.3s;
 }
 
-nav ul li a:hover {
+nav a:hover {
     color: var(--accent);
 }
 
 
 /* ==============================
-   Main Content
+   MAIN
    ============================== */
 
 main {
@@ -95,24 +97,27 @@ section {
 }
 
 section h2 {
-    color: var(--primary);
-    margin-bottom: 20px;
     text-align: center;
+    color: var(--primary);
+    margin-bottom: 25px;
 }
 
 
 /* ==============================
-   Hero / Banner
+   HERO
    ============================== */
 
 #home {
     min-height: 500px;
+
+    /* Flexbox */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     text-align: center;
-    color: var(--light-text);
+    color: white;
 
     background: linear-gradient(
         135deg,
@@ -127,51 +132,44 @@ section h2 {
 }
 
 #home p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-}
-
-#home a {
-    text-decoration: none;
+    margin-bottom: 25px;
 }
 
 #home button {
-    background-color: var(--accent);
-    color: var(--primary);
-    border: none;
     padding: 12px 25px;
     margin: 5px;
+    border: none;
     border-radius: 6px;
-    font-size: 1rem;
+
+    background-color: var(--accent);
+    color: var(--primary);
+
     font-weight: bold;
     cursor: pointer;
-    transition: 0.3s;
 }
 
 #home button:hover {
-    transform: translateY(-2px);
-    background-color: #ffffff;
+    background-color: white;
 }
 
 
 /* ==============================
-   About Section
+   ABOUT
    ============================== */
 
 #about {
-    background-color: var(--card-bg);
+    background-color: white;
 }
 
 #about p {
     max-width: 800px;
-    margin: 0 auto 25px;
+    margin: 0 auto 20px;
     text-align: center;
 }
 
 #about h3 {
     color: var(--secondary);
-    margin-top: 25px;
-    margin-bottom: 10px;
+    margin-top: 20px;
 }
 
 #about ul {
@@ -180,7 +178,7 @@ section h2 {
 
 
 /* ==============================
-   Match Schedule
+   MATCH SCHEDULE
    ============================== */
 
 #matches {
@@ -191,30 +189,24 @@ section h2 {
     padding: 10px;
     border: 1px solid var(--border);
     border-radius: 6px;
-    background-color: white;
-    margin-top: 10px;
     margin-bottom: 20px;
 }
 
 
 /* ==============================
-   Tables
+   TABLES
    ============================== */
 
 table {
     width: 100%;
     border-collapse: collapse;
-    background-color: var(--card-bg);
-    box-shadow: var(--shadow);
-    border-radius: 8px;
-    overflow: hidden;
+    background-color: white;
 }
 
 th {
     background-color: var(--primary);
-    color: var(--light-text);
+    color: white;
     padding: 14px;
-    text-align: center;
 }
 
 td {
@@ -228,7 +220,6 @@ tr:hover {
 }
 
 td a {
-    display: inline-block;
     background-color: var(--accent);
     color: var(--primary);
     padding: 7px 14px;
@@ -237,38 +228,43 @@ td a {
     font-weight: bold;
 }
 
-td a:hover {
-    background-color: var(--primary);
-    color: white;
+
+/* ==============================
+   BOOKING SECTION - CSS GRID
+   ============================== */
+
+#booking {
+    background-color: white;
+}
+
+#booking > div {
+
+    /* CSS Grid */
+    display: grid;
+
+    /* Form gets more space than summary */
+    grid-template-columns: 2fr 1fr;
+
+    gap: 30px;
+    align-items: start;
 }
 
 
 /* ==============================
-   Booking Section
+   BOOKING FORM
    ============================== */
-
-#booking {
-    background-color: var(--card-bg);
-}
-
-#booking > div {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 30px;
-    align-items: start;
-}
 
 form {
     background-color: var(--background);
     padding: 30px;
     border-radius: 10px;
-    box-shadow: var(--shadow);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
 form label {
     display: block;
     font-weight: bold;
-    margin-bottom: 6px;
+    margin-bottom: 5px;
 }
 
 form input,
@@ -277,18 +273,18 @@ form select {
     padding: 11px;
     border: 1px solid var(--border);
     border-radius: 6px;
-    font-size: 1rem;
 }
 
 form button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+
     background-color: var(--primary);
     color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1rem;
+
     font-weight: bold;
+    cursor: pointer;
 }
 
 form button:hover {
@@ -297,15 +293,17 @@ form button:hover {
 
 
 /* ==============================
-   Booking Summary Card
+   BOOKING SUMMARY
    ============================== */
 
 aside {
     background-color: var(--primary);
     color: white;
+
     padding: 25px;
     border-radius: 10px;
-    box-shadow: var(--shadow);
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
 aside h3 {
@@ -315,39 +313,35 @@ aside h3 {
 
 aside p {
     margin-bottom: 12px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    padding-bottom: 8px;
 }
 
 
 /* ==============================
-   My Bookings
-   ============================== */
-
-#my-bookings {
-    background-color: var(--background);
-}
-
-
-/* ==============================
-   Guidelines Cards
+   GUIDELINES - CSS GRID
    ============================== */
 
 #guidelines {
-    background-color: var(--card-bg);
+    background-color: white;
 }
 
 #guidelines > div {
+
+    /* Three cards in a row */
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
+
     gap: 25px;
 }
 
 #guidelines article {
     background-color: var(--background);
+
     padding: 25px;
     border-radius: 10px;
-    box-shadow: var(--shadow);
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+
     border-top: 4px solid var(--accent);
 }
 
@@ -358,7 +352,7 @@ aside p {
 
 
 /* ==============================
-   Footer
+   FOOTER
    ============================== */
 
 footer {
@@ -369,60 +363,88 @@ footer {
 }
 
 
-/* ==============================
-   Responsive Design
-   ============================== */
+/* =================================================
+   TABLET RESPONSIVE DESIGN
+   ================================================= */
 
 @media (max-width: 900px) {
 
+    /* Navigation remains horizontal but has less spacing */
     nav {
         padding: 15px 4%;
     }
 
     nav ul {
-        gap: 12px;
+        gap: 15px;
     }
 
     #home h1 {
         font-size: 2.3rem;
     }
 
+    /*
+       Booking form and summary
+       become one column.
+    */
     #booking > div {
         grid-template-columns: 1fr;
     }
 
+    /*
+       Guidelines cards become
+       single-column.
+    */
     #guidelines > div {
         grid-template-columns: 1fr;
     }
 
+    /*
+       Allow wide tables to scroll.
+    */
     table {
-        font-size: 0.9rem;
+        min-width: 800px;
+    }
+
+    #matches,
+    #my-bookings {
+        overflow-x: auto;
     }
 }
 
 
+/* =================================================
+   MOBILE RESPONSIVE DESIGN
+   ================================================= */
+
 @media (max-width: 600px) {
 
+    /*
+       Navigation changes from row
+       to column.
+    */
     nav {
         flex-direction: column;
         gap: 10px;
     }
 
     nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-direction: column;
+        gap: 8px;
     }
 
     main {
-        padding-top: 110px;
+        padding-top: 150px;
     }
 
     section {
         padding: 50px 5%;
     }
 
+    /*
+       Smaller hero heading.
+    */
     #home {
-        min-height: 450px;
+        min-height: 400px;
     }
 
     #home h1 {
@@ -430,12 +452,56 @@ footer {
     }
 
     #home p {
-        font-size: 1rem;
+        font-size: 0.95rem;
+    }
+
+    /*
+       Buttons stack on mobile.
+    */
+    #home a {
+        display: block;
+        width: 100%;
+    }
+
+    #home button {
+        width: 90%;
+    }
+
+    /*
+       Booking form and summary
+       are already one column.
+    */
+    #booking > div {
+        grid-template-columns: 1fr;
+    }
+
+    /*
+       Guidelines stack vertically.
+    */
+    #guidelines > div {
+        grid-template-columns: 1fr;
+    }
+
+    /*
+       Tables scroll horizontally.
+    */
+    #matches,
+    #my-bookings {
+        overflow-x: auto;
     }
 
     table {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
+        min-width: 800px;
+    }
+
+    /*
+       Smaller form spacing.
+    */
+    form {
+        padding: 20px;
+    }
+
+    aside {
+        padding: 20px;
     }
 }
