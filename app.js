@@ -52,3 +52,19 @@ bookButtons.forEach(function (button) {
         showToast("Opening the ticket booking form...");
     });
 });
+
+// ==========================================
+// Activity 5 - DOM Manipulation
+// ==========================================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    // Access the paragraph using its ID
+    const demo = document.getElementById("demo");
+
+    // Dynamically display IPL information
+    demo.textContent =
+        "IPL 2026 is an exciting T20 cricket tournament featuring " +
+        "top teams and players. Fans can watch thrilling matches " +
+        "and book tickets to experience the action live at the stadium.";
+});
