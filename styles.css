@@ -1,0 +1,441 @@
+/* ==============================
+   CSS Variables / Theme
+   ============================== */
+
+:root {
+    --primary: #071952;
+    --secondary: #0b3d91;
+    --accent: #f5b400;
+    --background: #f4f6fb;
+    --card-bg: #ffffff;
+    --text: #222222;
+    --light-text: #ffffff;
+    --border: #dddddd;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ==============================
+   General Styling
+   ============================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+
+/* ==============================
+   Navigation Bar
+   ============================== */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav {
+    background-color: var(--primary);
+    color: var(--light-text);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 6%;
+    box-shadow: var(--shadow);
+}
+
+nav h2 {
+    color: var(--accent);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    color: var(--light-text);
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--accent);
+}
+
+
+/* ==============================
+   Main Content
+   ============================== */
+
+main {
+    padding-top: 70px;
+}
+
+section {
+    padding: 70px 8%;
+    scroll-margin-top: 70px;
+}
+
+section h2 {
+    color: var(--primary);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+/* ==============================
+   Hero / Banner
+   ============================== */
+
+#home {
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--light-text);
+
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+}
+
+#home h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+#home p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+#home a {
+    text-decoration: none;
+}
+
+#home button {
+    background-color: var(--accent);
+    color: var(--primary);
+    border: none;
+    padding: 12px 25px;
+    margin: 5px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#home button:hover {
+    transform: translateY(-2px);
+    background-color: #ffffff;
+}
+
+
+/* ==============================
+   About Section
+   ============================== */
+
+#about {
+    background-color: var(--card-bg);
+}
+
+#about p {
+    max-width: 800px;
+    margin: 0 auto 25px;
+    text-align: center;
+}
+
+#about h3 {
+    color: var(--secondary);
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+#about ul {
+    margin-left: 25px;
+}
+
+
+/* ==============================
+   Match Schedule
+   ============================== */
+
+#matches {
+    background-color: var(--background);
+}
+
+#team-filter {
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background-color: white;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+
+/* ==============================
+   Tables
+   ============================== */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--card-bg);
+    box-shadow: var(--shadow);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th {
+    background-color: var(--primary);
+    color: var(--light-text);
+    padding: 14px;
+    text-align: center;
+}
+
+td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+}
+
+tr:hover {
+    background-color: #f0f3fa;
+}
+
+td a {
+    display: inline-block;
+    background-color: var(--accent);
+    color: var(--primary);
+    padding: 7px 14px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+td a:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+
+/* ==============================
+   Booking Section
+   ============================== */
+
+#booking {
+    background-color: var(--card-bg);
+}
+
+#booking > div {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+form {
+    background-color: var(--background);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+form input,
+form select {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+form button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+form button:hover {
+    background-color: var(--secondary);
+}
+
+
+/* ==============================
+   Booking Summary Card
+   ============================== */
+
+aside {
+    background-color: var(--primary);
+    color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+aside h3 {
+    color: var(--accent);
+    margin-bottom: 20px;
+}
+
+aside p {
+    margin-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 8px;
+}
+
+
+/* ==============================
+   My Bookings
+   ============================== */
+
+#my-bookings {
+    background-color: var(--background);
+}
+
+
+/* ==============================
+   Guidelines Cards
+   ============================== */
+
+#guidelines {
+    background-color: var(--card-bg);
+}
+
+#guidelines > div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+#guidelines article {
+    background-color: var(--background);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    border-top: 4px solid var(--accent);
+}
+
+#guidelines article h3 {
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+
+/* ==============================
+   Footer
+   ============================== */
+
+footer {
+    background-color: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+
+/* ==============================
+   Responsive Design
+   ============================== */
+
+@media (max-width: 900px) {
+
+    nav {
+        padding: 15px 4%;
+    }
+
+    nav ul {
+        gap: 12px;
+    }
+
+    #home h1 {
+        font-size: 2.3rem;
+    }
+
+    #booking > div {
+        grid-template-columns: 1fr;
+    }
+
+    #guidelines > div {
+        grid-template-columns: 1fr;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    main {
+        padding-top: 110px;
+    }
+
+    section {
+        padding: 50px 5%;
+    }
+
+    #home {
+        min-height: 450px;
+    }
+
+    #home h1 {
+        font-size: 2rem;
+    }
+
+    #home p {
+        font-size: 1rem;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
